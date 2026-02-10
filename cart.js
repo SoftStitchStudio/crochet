@@ -1,5 +1,5 @@
 // ================================
-// CART HELPERS
+// CART CORE
 // ================================
 
 function getCart() {
@@ -11,64 +11,97 @@ function saveCart(cart) {
 }
 
 // ================================
-// ADD TO CART (SMART VERSION)
+// CART COUNT
 // ================================
-
-function addToCart(product) {
-  let cart = getCart();
-
-  // Check if product already exists
-  const existing = cart.find(item => item.id === product.id);
-
-  if (existing) {
-    existing.qty += 1;
-  } else {
-    cart.push({
-      ...product,
-      qty: 1
-    });
-  }
-
-  saveCart(cart);
-
-  updateCartCount();
-  showToast("Added to cart 🧶");
-}
-
-// ================================
-// CART COUNT (HEADER)
-// ================================
-
-function getCartCount() {
-  return getCart().reduce((sum, item) => sum + item.qty, 0);
-}
 
 function updateCartCount() {
   const el = document.getElementById("cartCount");
-  if (el) {
-    el.textContent = getCartCount();
-  }
+  if (!el) return;
+
+  const count = getCart().reduce((s, i) => s + i.qty, 0);
+  el.textContent = count;
 }
 
 // ================================
-// TOAST MESSAGE (NO ALERT)
+// CART TOTAL
 // ================================
 
-function showToast(message) {
-  let toast = document.getElementById("toast");
+function calculateTotal() {
+  return getCart().reduce((sum, i) => sum + i.price * i.qty, 0);
+}
 
-  if (!toast) {
-    toast = document.createElement("div");
-    toast.id = "toast";
-    document.body.appendChild(toast);
+// ================================
+// RENDER CART
+// ================================
+
+function renderCart() {
+  const cart = getCart();
+  const container = document.getElementById("cartContainer");
+  const totalEl = document.getElementById("cartTotal");
+
+  updateCartCount();
+
+  if (!cart.length) {
+    container.innerHTML = `
+      <div class="empty-cart">
+        Your cart is empty 😔
+      </div>
+    `;
+    totalEl.textContent = "₹ 0";
+    return;
   }
 
-  toast.textContent = message;
-  toast.className = "toast show";
+  container.innerHTML = "";
 
-  setTimeout(() => {
-    toast.className = "toast";
-  }, 2000);
+  cart.forEach(item => {
+    container.innerHTML += `
+      <div class="cart-item">
+        <div class="cart-name">${item.name}</div>
+        <div class="cart-price">₹ ${item.price}</div>
+
+        <div class="qty-controls">
+          <button onclick="changeQty('${item.id}', -1)">−</button>
+          <span>${item.qty}</span>
+          <button onclick="changeQty('${item.id}', 1)">+</button>
+        </div>
+
+        <button class="remove-btn"
+          onclick="removeItem('${item.id}')">
+          ✕
+        </button>
+      </div>
+    `;
+  });
+
+  totalEl.textContent = `₹ ${calculateTotal()}`;
+}
+
+// ================================
+// ACTIONS
+// ================================
+
+function changeQty(id, delta) {
+  const cart = getCart();
+  const item = cart.find(i => i.id === id);
+
+  if (!item) return;
+
+  item.qty += delta;
+
+  if (item.qty <= 0) {
+    removeItem(id);
+    return;
+  }
+
+  saveCart(cart);
+  renderCart();
+}
+
+function removeItem(id) {
+  let cart = getCart();
+  cart = cart.filter(i => i.id !== id);
+  saveCart(cart);
+  renderCart();
 }
 
 // ================================
