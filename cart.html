@@ -1,27 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Cart</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Your Cart</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/cart.css">
 </head>
+
 <body>
 
-<h1>Your Cart</h1>
-<div id="cartItems"></div>
+  <!-- HEADER -->
+  <header class="header">
+    <h1>Soft Stitch Studio</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="categories.html">Shop</a>
+      <a href="cart.html">
+        Cart 🛒 <span id="cartCount">0</span>
+      </a>
+    </nav>
+  </header>
 
-<script src="cart.js"></script>
-<script>
-  const cart = getCart();
-  const div = document.getElementById("cartItems");
+  <!-- MAIN -->
+  <main>
+    <h1 class="page-title">Your Cart</h1>
 
-  if (!cart.length) {
-    div.innerHTML = "<p>Your cart is empty 😔</p>";
-  }
+    <div id="cartContainer" class="cart-container"></div>
 
-  cart.forEach(i => {
-    div.innerHTML += `<p>${i.name} – ₹${i.price}</p>`;
-  });
-</script>
+    <div class="cart-summary">
+      <div class="total">
+        <span>Total</span>
+        <strong id="cartTotal">₹ 0</strong>
+      </div>
+
+      <!-- STRIPE PAYMENT LINK -->
+      <a
+        href="https://buy.stripe.com/TEST_LINK_HERE"
+        target="_blank"
+        class="checkout-btn"
+      >
+        Pay Now
+      </a>
+
+      <p class="note">
+        Secure payment via Stripe 🔒
+      </p>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    © 2026 Handmade with 🧶 & ❤️ by Ruchi Chouhan
+  </footer>
+
+  <script src="cart.js"></script>
+  <script>
+    renderCart();
+  </script>
 
 </body>
 </html>
