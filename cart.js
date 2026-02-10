@@ -1,53 +1,71 @@
 // ================================
-// CART CORE
+// CART CORE (GLOBAL)
 // ================================
 
-function getCart() {
+window.getCart = function () {
   return JSON.parse(localStorage.getItem("cart")) || [];
-}
+};
 
-function saveCart(cart) {
+window.saveCart = function (cart) {
   localStorage.setItem("cart", JSON.stringify(cart));
-}
+};
+
+// ================================
+// ADD TO CART (GLOBAL)
+// ================================
+
+window.addToCart = function (product) {
+  let cart = getCart();
+
+  const existing = cart.find(item => item.id === product.id);
+
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cart.push({ ...product, qty: 1 });
+  }
+
+  saveCart(cart);
+  updateCartCount();
+  alert("Added to cart 🧶");
+};
 
 // ================================
 // CART COUNT
 // ================================
 
-function updateCartCount() {
+window.updateCartCount = function () {
   const el = document.getElementById("cartCount");
   if (!el) return;
 
   const count = getCart().reduce((s, i) => s + i.qty, 0);
   el.textContent = count;
-}
+};
 
 // ================================
-// CART TOTAL
+// TOTAL
 // ================================
 
-function calculateTotal() {
+window.calculateTotal = function () {
   return getCart().reduce((sum, i) => sum + i.price * i.qty, 0);
-}
+};
 
 // ================================
-// RENDER CART
+// RENDER CART (for cart.html)
 // ================================
 
-function renderCart() {
+window.renderCart = function () {
   const cart = getCart();
   const container = document.getElementById("cartContainer");
   const totalEl = document.getElementById("cartTotal");
 
+  if (!container) return;
+
   updateCartCount();
 
   if (!cart.length) {
-    container.innerHTML = `
-      <div class="empty-cart">
-        Your cart is empty 😔
-      </div>
-    `;
-    totalEl.textContent = "₹ 0";
+    container.innerHTML = `<p>Your cart is empty 😔</p>`;
+    if (totalEl) totalEl.textContent = "₹ 0";
     return;
   }
 
@@ -55,54 +73,25 @@ function renderCart() {
 
   cart.forEach(item => {
     container.innerHTML += `
-      <div class="cart-item">
-        <div class="cart-name">${item.name}</div>
-        <div class="cart-price">₹ ${item.price}</div>
-
-        <div class="qty-controls">
-          <button onclick="changeQty('${item.id}', -1)">−</button>
-          <span>${item.qty}</span>
-          <button onclick="changeQty('${item.id}', 1)">+</button>
-        </div>
-
-        <button class="remove-btn"
-          onclick="removeItem('${item.id}')">
-          ✕
-        </button>
+      <div>
+        ${item.name} – ₹ ${item.price} × ${item.qty}
+        <button onclick="removeItem('${item.id}')">✕</button>
       </div>
     `;
   });
 
-  totalEl.textContent = `₹ ${calculateTotal()}`;
-}
+  if (totalEl) totalEl.textContent = `₹ ${calculateTotal()}`;
+};
 
 // ================================
-// ACTIONS
+// REMOVE ITEM
 // ================================
 
-function changeQty(id, delta) {
-  const cart = getCart();
-  const item = cart.find(i => i.id === id);
-
-  if (!item) return;
-
-  item.qty += delta;
-
-  if (item.qty <= 0) {
-    removeItem(id);
-    return;
-  }
-
+window.removeItem = function (id) {
+  let cart = getCart().filter(i => i.id !== id);
   saveCart(cart);
   renderCart();
-}
-
-function removeItem(id) {
-  let cart = getCart();
-  cart = cart.filter(i => i.id !== id);
-  saveCart(cart);
-  renderCart();
-}
+};
 
 // ================================
 // INIT
