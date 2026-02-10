@@ -16,11 +16,13 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="categories.html">Shop</a>
-      <a href="cart.html">Cart 🛒</a>
+      <a href="cart.html">
+        Cart 🛒 <span id="cartCount">0</span>
+      </a>
     </nav>
   </header>
 
-  <!-- SCROLLABLE CONTENT -->
+  <!-- MAIN -->
   <main>
     <div id="productDetail"></div>
   </main>
@@ -30,9 +32,10 @@
     © 2026 Handmade with 🧶 & ❤️ by Ruchi Chouhan
   </footer>
 
-  <!-- SCRIPTS -->
-  <script src="products.js"></script>
+  <!-- IMPORTANT: cart.js FIRST -->
   <script src="cart.js"></script>
+  <script src="products.js"></script>
+
   <script>
     const id = new URLSearchParams(window.location.search).get("id");
     const p = products.find(x => x.id === id);
@@ -70,6 +73,8 @@
 
       </section>
     `;
+
+    updateCartCount();
   </script>
 
 </body>
