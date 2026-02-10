@@ -1,0 +1,28 @@
+/* css/product.css */
+
+.product-page {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.product-page img {
+  width: 400px;
+  border-radius: 10px;
+}
+
+.product-page h1 {
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .product-page {
+    flex-direction: column;
+  }
+
+  .product-page img {
+    width: 100%;
+  }
+}
