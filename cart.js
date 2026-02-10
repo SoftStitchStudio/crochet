@@ -98,3 +98,52 @@ window.removeItem = function (id) {
 // ================================
 
 document.addEventListener("DOMContentLoaded", updateCartCount);
+
+
+// ================================
+// PAY NOW (UPI FLOW)
+// ================================
+
+window.payNow = function () {
+  const cart = getCart();
+
+  if (!cart.length) {
+    alert("Your cart is empty");
+    return;
+  }
+
+  const total = calculateTotal();
+
+  // Create readable order summary
+  const orderText = cart
+    .map(i => `${i.name} x ${i.qty}`)
+    .join(", ");
+
+  // Your UPI ID (CHANGE THIS)
+  const upiId = "yourupi@bank";
+
+  // Encode for URL
+  const note = encodeURIComponent(
+    `Order: ${orderText} | Total: ₹${total}`
+  );
+
+  const upiUrl = `upi://pay?pa=${upiId}&pn=Soft Stitch Studio&am=${total}&cu=INR&tn=${note}`;
+
+  // Open UPI app
+  window.location.href = upiUrl;
+
+  // Save order snapshot (IMPORTANT)
+  localStorage.setItem(
+    "lastOrder",
+    JSON.stringify({
+      items: cart,
+      total: total,
+      time: new Date().toISOString()
+    })
+  );
+
+  // Redirect to confirmation page after 5 seconds
+  setTimeout(() => {
+    window.location.href = "order-confirmation.html";
+  }, 5000);
+};
