@@ -3,7 +3,7 @@ const products = [
     id: "octopus",
     name: "Octopus Keychain",
     category: "keychains",
-    price: 5800,
+    price: 580,
     image: "Octopus_PP.jpg",
     description: "Handmade crochet throw that becomes a keychain."
   },
@@ -11,7 +11,7 @@ const products = [
     id: "fish",
     name: "Fish Keychain",
     category: "keychains",
-    price: 5800,
+    price: 450,
     image: "Fish_PP.jpg",
     description: "Handmade crochet throw that becomes a keychain."
   },
@@ -19,7 +19,7 @@ const products = [
     id: "pumpkin_yellow",
     name: "Pumpkin Keychain",
     category: "keychains",
-    price: 5800,
+    price: 200,
     image: "Pumpkin_Yellow_PP.jpg",
     description: "Handmade crochet throw that becomes a keychain."
   },
@@ -27,7 +27,7 @@ const products = [
     id: "pumpkin_brown",
     name: "Pumpkin Keychain",
     category: "keychains",
-    price: 5800,
+    price: 200,
     image: "Pumpkin_Brown_PP.jpg",
     description: "Handmade crochet throw that becomes a keychain."
   },
@@ -35,7 +35,7 @@ const products = [
     id: "sunflower",
     name: "Sunflower Keychain",
     category: "keychains",
-    price: 5800,
+    price: 150,
     image: "Sunflower_PP.jpg",
     description: "Handmade crochet throw that becomes a keychain."
   },
@@ -43,7 +43,7 @@ const products = [
     id: "rose",
     name: "Rose Flower",
     category: "decor",
-    price: 4500,
+    price: 750,
     image: "Rose_PP.jpg",
     description: "Soft floral crochet throw."
   },
@@ -51,7 +51,7 @@ const products = [
     id: "flowerpot_yellow",
     name: "Flower Yellow",
     category: "decor",
-    price: 4500,
+    price: 950,
     image: "FlowerPot_Yellow_PP.jpg",
     description: "Soft floral crochet throw."
   }
