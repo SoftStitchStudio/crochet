@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Products</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products | Soft Stitch Studio</title>
 
-  <!-- Base layout -->
   <link rel="stylesheet" href="base.css">
-  <!-- Products page styles -->
   <link rel="stylesheet" href="products.css">
 </head>
 
@@ -14,39 +13,41 @@
 
   <!-- HEADER -->
   <header class="header">
-    <h1>Soft Stitch Studio</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="categories.html">Shop</a>
-      <a href="cart.html">
-        Cart 🛒 <span id="cartCount">0</span>
-      </a>
-    </nav>
+    <div class="container header-inner">
+      <h1 class="logo">Soft Stitch Studio</h1>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="categories.html">Shop</a>
+        <a href="cart.html" class="cart-link">
+          Cart 🛒 <span id="cartCount">0</span>
+        </a>
+      </nav>
+    </div>
   </header>
 
-  <!-- SCROLLABLE CONTENT -->
-  <main>
+  <!-- MAIN CONTENT -->
+  <main class="page-wrapper">
+    <div class="container">
 
-    <h1 class="page-title">Products</h1>
+      <h2 class="page-title">Products</h2>
 
-    <div id="productList" class="product-grid"></div>
+      <div id="productList" class="product-grid"></div>
 
+    </div>
   </main>
 
   <!-- FOOTER -->
   <footer class="footer">
-    © 2026 Handmade with 🧶 & ❤️ by Ruchi Chouhan
+    <div class="container">
+      © 2026 Handmade with 🧶 & ❤️ by Ruchi Chouhan
+    </div>
   </footer>
 
-  <!-- IMPORTANT: SCRIPT ORDER MATTERS -->
-
-  <!-- Cart functions MUST load first -->
+  <!-- SCRIPTS -->
   <script src="cart.js"></script>
-
-  <!-- Products data -->
   <script src="products.js"></script>
 
-  <!-- Page logic -->
   <script>
     const params = new URLSearchParams(window.location.search);
     const category = params.get("category");
@@ -79,7 +80,6 @@
         `;
       });
 
-    // Update cart count on page load
     updateCartCount();
   </script>
 
