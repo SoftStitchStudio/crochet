@@ -5,7 +5,7 @@ const products = [
     category: "keychains",
     price: 580,
     image: "Octopus_PP.jpg",
-    description: "Handmade crochet throw that becomes a keychain."
+    description: "An adorable hand-crocheted octopus keychain made with soft premium yarn. Lightweight, durable, and perfect to add a cute handmade touch to your keys or bags."
   },
   {
     id: "fish",
@@ -13,7 +13,7 @@ const products = [
     category: "keychains",
     price: 450,
     image: "Fish_PP.jpg",
-    description: "Handmade crochet throw that becomes a keychain."
+    description: "A vibrant crochet fish keychain crafted with love and fine detailing. A charming little companion for your keys, backpacks, or gifting moments."
   },
   {
     id: "pumpkin_yellow",
@@ -21,7 +21,7 @@ const products = [
     category: "keychains",
     price: 200,
     image: "Pumpkin_Yellow_PP.jpg",
-    description: "Handmade crochet throw that becomes a keychain."
+    description: "Cute yellow crochet pumpkin keychain, handmade stitch by stitch. A cozy autumn-inspired accessory that adds warmth and personality to your everyday essentials."
   },
   {
     id: "pumpkin_brown",
@@ -29,7 +29,7 @@ const products = [
     category: "keychains",
     price: 200,
     image: "Pumpkin_Brown_PP.jpg",
-    description: "Handmade crochet throw that becomes a keychain."
+    description: "Rustic brown crochet pumpkin keychain with a soft textured finish. Perfect for fall lovers and those who adore earthy handmade charm."
   },
   {
     id: "sunflower",
@@ -37,7 +37,7 @@ const products = [
     category: "keychains",
     price: 150,
     image: "Sunflower_PP.jpg",
-    description: "Handmade crochet throw that becomes a keychain."
+    description: "Bright and cheerful sunflower crochet keychain, lovingly handmade to spread positivity. A small floral touch that makes a big happy statement."
   },
   {
     id: "rose",
@@ -45,7 +45,7 @@ const products = [
     category: "decor",
     price: 750,
     image: "Rose_PP.jpg",
-    description: "Soft floral crochet throw."
+    description: "Elegant hand-crocheted rose crafted with delicate detailing. A timeless floral decor piece that never fades — perfect for gifting or home styling."
   },
   {
     id: "flowerpot_yellow",
@@ -53,6 +53,6 @@ const products = [
     category: "decor",
     price: 950,
     image: "FlowerPot_Yellow_PP.jpg",
-    description: "Soft floral crochet throw."
+    description: "Charming crochet flower in a mini pot, carefully handmade for a cozy home vibe. A maintenance-free bloom that adds warmth to any corner."
   }
 ];
