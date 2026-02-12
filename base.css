@@ -1,116 +1,96 @@
-/* ================================
+/* ===============================
    GLOBAL RESET
-================================ */
+================================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root {
-  --bg-main: #f6f2eb;
-  --bg-card: #ffffff;
-  --accent: #e07a5f;
-  --text-dark: #2f2f2f;
-  --text-light: #6b6b6b;
-  --border-soft: #eee7df;
-  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.05);
-}
-
-/* ================================
-   LAYOUT STRUCTURE
-================================ */
-
 html, body {
   height: 100%;
   font-family: 'Segoe UI', sans-serif;
-  background: var(--bg-main);
-  color: var(--text-dark);
+  background: #fdfaf6;
+  color: #333;
 }
 
-/* Full height flex layout */
+/* ===============================
+   LAYOUT STRUCTURE
+   Header (sticky)
+   Scrollable Main
+   Footer (sticky)
+================================= */
+
 body {
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  overflow: hidden; /* prevent full page scroll */
 }
 
-/* Scroll only main content */
-.page-wrapper {
-  flex: 1;
-  overflow-y: auto;
-  padding: 60px 0;
-}
-
-/* Consistent width container */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-/* ================================
-   HEADER
-================================ */
-
+/* HEADER */
 .header {
-  background: #fff;
-  border-bottom: 1px solid var(--border-soft);
+  background: #ffffff;
+  border-bottom: 1px solid #eee;
+  padding: 18px 40px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 70px;
-}
-
-.logo {
+.header h1 {
   font-size: 22px;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
-.nav {
+.header nav {
   display: flex;
-  gap: 32px;
+  gap: 30px;
   align-items: center;
 }
 
-.nav a {
+.header nav a {
   text-decoration: none;
-  color: var(--text-dark);
+  color: #444;
   font-size: 15px;
   font-weight: 500;
   transition: 0.2s ease;
 }
 
-.nav a:hover {
-  color: var(--accent);
+.header nav a:hover {
+  color: #e07a5f;
 }
 
-/* ================================
-   PAGE TITLE
-================================ */
+/* MAIN SCROLL AREA */
+main {
+  flex: 1;
+  overflow-y: auto; /* only this area scrolls */
+  padding: 60px 20px;
+}
 
+/* PAGE TITLES */
 .page-title {
-  font-size: 34px;
+  font-size: 36px;
   font-weight: 600;
-  margin-bottom: 40px;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
-/* ================================
-   FOOTER
-================================ */
-
+/* FOOTER */
 .footer {
-  background: #fff;
-  border-top: 1px solid var(--border-soft);
+  background: #ffffff;
+  border-top: 1px solid #eee;
   text-align: center;
-  padding: 18px 0;
+  padding: 18px;
   font-size: 14px;
-  color: var(--text-light);
+  color: #777;
+
+  position: sticky;
+  bottom: 0;
 }
