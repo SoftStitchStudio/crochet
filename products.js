@@ -46,5 +46,13 @@ const products = [
     price: 4500,
     image: "Rose_PP.jpg",
     description: "Soft floral crochet throw."
+  },
+  {
+    id: "flowerpot_yellow",
+    name: "Flower Yellow",
+    category: "decor",
+    price: 4500,
+    image: "FlowerPot_Yellow_PP.jpg",
+    description: "Soft floral crochet throw."
   }
 ];
