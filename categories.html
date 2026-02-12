@@ -1,18 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Categories</title>
-  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="categories.css">
 </head>
+
 <body>
 
-<h1 class="page-title">Shop by Category</h1>
+  <!-- HEADER -->
+  <header class="header">
+    <h1>Soft Stitch Studio</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="categories.html">Shop</a>
+      <a href="cart.html">
+        Cart 🛒 <span id="cartCount">0</span>
+      </a>
+    </nav>
+  </header>
 
-<div class="category-grid">
-  <a href="products.html?category=keychains" class="card">Keychains</a>
-  <a href="products.html?category=baby-sets" class="card">Baby Sets</a>
-  <a href="products.html?category=decor" class="card">Decor</a>
-</div>
+  <!-- MAIN -->
+  <main>
+    <h1 class="page-title">Shop by Category</h1>
 
+    <div class="category-grid">
+      <a href="products.html?category=keychains" class="card">Keychains</a>
+      <a href="products.html?category=baby-sets" class="card">Baby Sets</a>
+      <a href="products.html?category=decor" class="card">Decor</a>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    © 2026 Handmade with 🧶 & ❤️ by Ruchi Chouhan
+  </footer>
+
+  <script src="cart.js"></script>
 </body>
 </html>
