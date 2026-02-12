@@ -90,35 +90,48 @@
   color: #777;
 }
 
-/* =====================================
-   MOBILE – CART PAGE
-===================================== */
-
+/* =========================
+   MOBILE RESPONSIVE FIX
+========================= */
 @media (max-width: 768px) {
 
-  .page-wrapper {
-    padding: 40px 15px 100px;
+  .container {
+    width: 100%;
+    padding: 0 16px;
   }
 
-  .cart-item {
+  .product-page {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
   }
 
-  .summary-row {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
+  .product-images {
+    width: 100%;
+    margin-bottom: 20px;
   }
 
-  .cart-summary {
-    padding: 20px;
+  .product-images img {
+    width: 100%;
+    height: auto;
   }
 
-  .checkout-btn {
-    padding: 16px;
-    font-size: 15px;
+  .product-details {
+    width: 100%;
+    text-align: center;
   }
+
+  .product-details h1 {
+    font-size: 22px;
+  }
+
+  .price {
+    font-size: 18px;
+  }
+
+  .add-to-cart {
+    width: 100%;
+  }
+
 }
+
 
