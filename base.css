@@ -1,16 +1,6 @@
-/* ================================
-   ETSY-STYLE COZY BASE THEME
+/* ===============================
+   GLOBAL RESET
 ================================ */
-
-:root {
-  --bg-main: #f9f7f4;
-  --bg-card: #ffffff;
-  --accent: #e07a5f;
-  --text-dark: #2e2e2e;
-  --text-light: #6b6b6b;
-  --border-soft: #eee;
-  --shadow-soft: 0 8px 24px rgba(0,0,0,0.05);
-}
 
 * {
   margin: 0;
@@ -18,74 +8,86 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--bg-main);
-  color: var(--text-dark);
-  line-height: 1.6;
+html, body {
+  height: 100%;
 }
 
-/* ================================
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #faf7f2; /* Cozy beige */
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===============================
    HEADER
 ================================ */
 
 header {
-  background: white;
-  padding: 20px 40px;
-  border-bottom: 1px solid var(--border-soft);
+  background: #ffffff;
+  padding: 22px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
-header h1 {
-  font-size: 22px;
+.logo {
+  font-size: 26px;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+}
+
+nav {
+  display: flex;
+  gap: 35px;
 }
 
 nav a {
   text-decoration: none;
-  color: var(--text-dark);
-  margin-left: 24px;
+  color: #444;
   font-size: 15px;
-  transition: color 0.2s ease;
+  font-weight: 500;
+  transition: 0.3s ease;
 }
 
 nav a:hover {
-  color: var(--accent);
+  color: #d88c63; /* Cozy accent */
 }
 
-/* ================================
+/* ===============================
+   MAIN CONTENT
+================================ */
+
+main {
+  flex: 1;  /* THIS makes footer stick to bottom */
+  padding: 60px 80px;
+}
+
+/* ===============================
+   PAGE TITLES (Fix Products alignment)
+================================ */
+
+.page-title {
+  font-size: 38px;
+  font-weight: 600;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+/* ===============================
    FOOTER
 ================================ */
 
 footer {
+  background: #ffffff;
+  padding: 25px;
   text-align: center;
-  padding: 30px;
   font-size: 14px;
-  background: white;
-  border-top: 1px solid var(--border-soft);
-  margin-top: 60px;
-  color: var(--text-light);
-}
-
-/* ================================
-   BUTTONS
-================================ */
-
-button {
-  border: none;
-  background: #2e2e2e;
-  color: white;
-  padding: 10px 24px;
-  border-radius: 30px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: all 0.25s ease;
-}
-
-button:hover {
-  background: var(--accent);
-  transform: translateY(-2px);
+  border-top: 1px solid #eee;
+  margin-top: auto; /* Sticky footer */
 }
