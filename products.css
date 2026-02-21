@@ -1,56 +1,59 @@
 .page-title {
   text-align: center;
-  font-size: 44px;
-  margin: 80px 0 70px;
-  font-weight: 500;
+  font-size: 52px;
+  margin: 120px 0 100px;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 
-/* Grid */
+/* Premium 2-column layout */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 70px 60px;
-  padding: 0 8%;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 120px 80px;
+  padding: 0 12%;
 }
 
-/* Card */
+/* Card becomes editorial block */
 .product-card {
   display: flex;
   flex-direction: column;
 }
 
-/* Image */
+/* Large dramatic image */
 .product-image {
   background: var(--bg-soft);
-  padding: 50px;
-  margin-bottom: 25px;
-  transition: 0.4s ease;
+  padding: 70px;
+  margin-bottom: 40px;
+  transition: all 0.4s ease;
 }
 
 .product-image img {
   width: 100%;
-  height: 260px;
+  height: 340px;
   object-fit: contain;
   transition: transform 0.4s ease;
 }
 
 .product-card:hover img {
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 
-/* Text */
+/* Typography hierarchy */
 .product-info h3 {
-  font-size: 18px;
-  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 10px;
 }
 
 .price {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text-light);
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
 }
 
-/* Actions */
+/* Subtle actions */
 .product-actions {
   display: flex;
   justify-content: space-between;
@@ -58,25 +61,36 @@
 }
 
 .view-link {
+  font-size: 14px;
   text-decoration: none;
   color: var(--text-light);
-  font-size: 14px;
+  letter-spacing: 1px;
 }
 
 .view-link:hover {
   color: var(--accent);
 }
 
+/* Ultra minimal button */
 .product-actions button {
   background: transparent;
-  border: 1px solid var(--accent);
+  border: none;
+  border-bottom: 1px solid var(--accent);
   color: var(--accent);
-  padding: 6px 18px;
+  padding: 4px 0;
   font-size: 14px;
+  letter-spacing: 1px;
   transition: 0.3s ease;
 }
 
 .product-actions button:hover {
-  background: var(--accent);
-  color: white;
+  opacity: 0.7;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 80px;
+  }
 }
