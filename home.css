@@ -1,152 +1,32 @@
-/* ===============================
-   INDEX PAGE
-================================ */
-
 .page-title {
   text-align: center;
-  font-size: 38px;
-  margin-bottom: 50px;
+  font-size: 40px;
+  margin-bottom: 60px;
 }
 
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
 }
 
 .category-grid .card {
-  background: #ffffff;
-  padding: 40px 30px;
-  border-radius: 18px;
+  background: var(--bg-card);
+  padding: 50px 30px;
+  border-radius: 20px;
   text-align: center;
+  box-shadow: var(--shadow-soft);
   transition: 0.3s ease;
 }
 
 .category-grid .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transform: translateY(-6px);
 }
 
 .category-grid .card h3 {
-  color: #6a2c91;
   margin-bottom: 10px;
 }
 
 .category-grid .card p {
   color: #777;
 }
-
-/* =========================
-   MOBILE RESPONSIVE FIX
-========================= */
-@media (max-width: 768px) {
-
-  /* General Container */
-  .container {
-    width: 100%;
-    padding: 0 16px;
-  }
-
-  /* =========================
-     HEADER FIX
-  ========================= */
-
-  header {
-    padding: 12px 16px;
-  }
-
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .logo {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 1.2;
-  }
-
-  /* Make nav clean & stacked */
-  .nav-links {
-    display: flex;
-    gap: 14px;
-    font-size: 15px;
-  }
-
-  .nav-links a {
-    text-decoration: none;
-  }
-
-  /* Cart alignment fix */
-  .cart {
-    font-size: 18px;
-    position: relative;
-  }
-
-  .cart span {
-    font-size: 13px;
-    position: absolute;
-    top: -6px;
-    right: -10px;
-  }
-
-  /* =========================
-     PRODUCT PAGE FIX
-  ========================= */
-
-  .product-page {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .product-images {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .product-images img {
-    width: 100%;
-    height: auto;
-  }
-
-  .product-details {
-    width: 100%;
-    text-align: center;
-  }
-
-  .product-details h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-
-  .price {
-    font-size: 18px;
-    margin-bottom: 12px;
-  }
-
-  .add-to-cart {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-  }
-
-  /* =========================
-     INDEX PAGE CARDS FIX
-  ========================= */
-
-  .category-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .category-card {
-    width: 100%;
-    text-align: center;
-  }
-
-}
-
-
-
