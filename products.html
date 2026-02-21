@@ -1,47 +1,115 @@
-<script>
-  const params = new URLSearchParams(window.location.search);
-  const category = params.get("category");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products | Soft Stitch Studio</title>
 
-  const list = document.getElementById("productList");
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="products.css">
+</head>
 
-  products
-    .filter(p => p.category === category)
-    .forEach(p => {
+<body>
 
-      const card = document.createElement("div");
-      card.className = "product-card";
-      card.dataset.id = p.id;
+  <!-- HEADER -->
+  <header class="header">
+    <h1>Soft Stitch Studio</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="categories.html">Shop</a>
+      <a href="cart.html">
+        Cart 🛒 <span id="cartCount">0</span>
+      </a>
+    </nav>
+  </header>
 
-      card.innerHTML = `
-        <div class="product-image">
-          <img src="${p.image}" alt="${p.name}">
-        </div>
+  <!-- MAIN CONTENT -->
+  <main class="page-wrapper">
+    <div class="container">
 
-        <div class="product-info">
-          <h3>${p.name}</h3>
-          <p class="price">₹ ${p.price}</p>
-        </div>
+      <h2 class="page-title">Products</h2>
 
-        <div class="product-actions">
-          <button class="add-btn">
-            Add to Cart
-          </button>
-        </div>
-      `;
+      <div id="productList" class="product-grid"></div>
 
-      /* Card Click → Product Page */
-      card.addEventListener("click", () => {
-        window.location.href = `product.html?id=${p.id}`;
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-brand">
+      © 2026 Soft Stitch Studio
+    </div>
+    <div class="footer-signature">
+      Handmade with 🧶 & ❤️ by <span>Ruchika Chouhan</span>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="cart.js"></script>
+  <script src="products.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const params = new URLSearchParams(window.location.search);
+      const category = params.get("category");
+
+      const list = document.getElementById("productList");
+
+      if (!window.products) {
+        list.innerHTML = "<p style='text-align:center;'>Products failed to load.</p>";
+        return;
+      }
+
+      if (!category) {
+        list.innerHTML = "<p style='text-align:center;'>No category selected.</p>";
+        return;
+      }
+
+      const filteredProducts = products.filter(p => p.category === category);
+
+      if (filteredProducts.length === 0) {
+        list.innerHTML = "<p style='text-align:center;'>No products found.</p>";
+        return;
+      }
+
+      filteredProducts.forEach(p => {
+
+        const card = document.createElement("div");
+        card.className = "product-card";
+
+        card.innerHTML = `
+          <div class="product-image">
+            <img src="${p.image}" alt="${p.name}">
+          </div>
+
+          <div class="product-info">
+            <h3>${p.name}</h3>
+            <p class="price">₹ ${p.price}</p>
+          </div>
+
+          <div class="product-actions">
+            <button class="add-btn">Add to Cart</button>
+          </div>
+        `;
+
+        /* Entire card clickable */
+        card.addEventListener("click", () => {
+          window.location.href = "product.html?id=" + p.id;
+        });
+
+        /* Prevent redirect when clicking Add to Cart */
+        card.querySelector(".add-btn").addEventListener("click", (e) => {
+          e.stopPropagation();
+          addToCart(p);
+        });
+
+        list.appendChild(card);
       });
 
-      /* Prevent redirect when clicking button */
-      card.querySelector(".add-btn").addEventListener("click", (e) => {
-        e.stopPropagation();
-        addToCart(p);
-      });
-
-      list.appendChild(card);
+      updateCartCount();
     });
+  </script>
 
-  updateCartCount();
-</script>
+</body>
+</html>
