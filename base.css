@@ -10,6 +10,15 @@
   --border-soft: #E6E3DF;
 }
 
+.page-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--accent);
+  margin: 18px auto 0;
+}
+
 /* ===============================
    GLOBAL RESET
 ================================ */
