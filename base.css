@@ -1,5 +1,5 @@
 /* ===============================
-   ROOT VARIABLES (Luxury Palette)
+   ROOT VARIABLES
 =============================== */
 
 :root {
@@ -13,18 +13,23 @@
 }
 
 /* ===============================
-   GLOBAL LAYOUT STRUCTURE
+   GLOBAL RESET
 =============================== */
 
-html, body {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
   height: 100%;
 }
 
 body {
-  margin: 0;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 
   background: var(--bg-main);
   color: var(--text-dark);
@@ -32,24 +37,19 @@ body {
   letter-spacing: 0.4px;
 }
 
-/* Main content grows to push footer down */
-main {
-  flex: 1;
-}
-
 /* ===============================
-   HEADER (Sticky Luxury Style)
+   HEADER (True Sticky)
 =============================== */
 
 header {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 999;
 
   background: rgba(246, 243, 238, 0.95);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
 
-  padding: 28px 8%;
+  padding: 25px 8%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -57,13 +57,11 @@ header {
   border-bottom: 1px solid var(--border-soft);
 }
 
-/* Logo */
 .logo {
   font-size: 26px;
   font-weight: 500;
 }
 
-/* Navigation */
 nav a {
   margin-left: 35px;
   text-decoration: none;
@@ -88,12 +86,21 @@ nav a:hover::after {
 }
 
 /* ===============================
-   FOOTER (Sticky Smart Footer)
+   MAIN CONTENT AREA
+=============================== */
+
+main {
+  flex: 1;
+  width: 100%;
+}
+
+/* ===============================
+   FOOTER (Smart Sticky Bottom)
 =============================== */
 
 footer {
   margin-top: auto;
-  padding: 60px 0;
+  padding: 50px 0;
   text-align: center;
   border-top: 1px solid var(--border-soft);
   font-size: 14px;
@@ -102,17 +109,18 @@ footer {
 }
 
 /* ===============================
-   MOBILE RESPONSIVE
+   MOBILE
 =============================== */
 
 @media (max-width: 768px) {
 
   header {
-    padding: 20px 5%;
+    padding: 18px 5%;
   }
 
   nav a {
     margin-left: 20px;
     font-size: 14px;
   }
+
 }
