@@ -58,3 +58,18 @@ footer {
   color: var(--text-light);
   margin-top: 120px;
 }
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .product-container {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    padding: 20px 5%;
+  }
+}
