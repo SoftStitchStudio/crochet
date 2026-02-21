@@ -1,126 +1,60 @@
-/* ===============================
-   ROOT VARIABLES – SCANDINAVIAN
-================================ */
-:root {
-  --bg-main: #F7F6F3;
-  --bg-card: #FFFFFF;
-  --accent: #C27B5B;
-  --accent-dark: #A86344;
-  --text-dark: #2F2F2F;
-  --border-soft: #E6E3DF;
-}
-
-.page-title::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 2px;
-  background: var(--accent);
-  margin: 18px auto 0;
-}
-
-/* ===============================
-   GLOBAL RESET
-================================ */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
-}
-
-/* ===============================
-   STICKY LAYOUT STRUCTURE
-================================ */
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
   background: var(--bg-main);
   color: var(--text-dark);
-  font-family: 'Inter', sans-serif;
-  overflow: hidden;
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 0.4px;
 }
 
-h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 500;
-}
-
-/* ===============================
-   HEADER (Sticky)
-================================ */
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-
-  background: var(--bg-main);
-  padding: 24px 70px;
+/* Header */
+header {
+  background: transparent;
+  padding: 30px 8%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--border-soft);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(6px);
 }
 
-.header h1 {
-  font-size: 24px;
-  letter-spacing: 0.5px;
+/* Logo */
+.logo {
+  font-size: 26px;
+  font-weight: 500;
 }
 
-.header nav {
-  display: flex;
-  gap: 35px;
-}
-
-.header nav a {
+/* Nav */
+nav a {
+  margin-left: 35px;
   text-decoration: none;
   color: var(--text-dark);
   font-size: 15px;
+  position: relative;
 }
 
-.header nav a:hover {
-  color: var(--accent);
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: 0.3s ease;
 }
 
-/* ===============================
-   MAIN (Scrollable Area)
-================================ */
-main {
-  flex: 1;
-  overflow-y: auto;
-  padding: 70px 90px;
+nav a:hover::after {
+  width: 100%;
 }
 
-/* ===============================
-   FOOTER (Sticky)
-================================ */
-.footer {
-  position: sticky;
-  bottom: 0;
-  background: var(--bg-main);
+/* Footer */
+footer {
   border-top: 1px solid var(--border-soft);
+  padding: 60px 0;
   text-align: center;
-  padding: 22px;
-  font-size: 14px;
-  color: #777;
-}
-
-/* ===============================
-   MOBILE
-================================ */
-@media (max-width: 768px) {
-
-  .header {
-    flex-direction: column;
-    gap: 12px;
-    padding: 20px;
-  }
-
-  main {
-    padding: 40px 20px 100px;
-  }
+  font-size: 15px;
+  color: var(--text-light);
+  margin-top: 120px;
 }
