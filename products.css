@@ -1,90 +1,55 @@
-/* ================================
-   PRODUCTS PAGE – CLEAN GRID FIX
-================================ */
-
-body {
-  background: #faf7f2;
-  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
-  color: #3a3a3a;
-}
-
-/* Page spacing */
-.page-wrapper {
-  padding: 50px 0 100px;
-}
-
-/* Container center alignment (important) */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Title – CENTER FIX */
 .page-title {
-  font-size: 34px;
-  font-weight: 600;
-  margin-bottom: 40px;
-  text-align: center;        /* ✅ FIXED */
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 50px;
 }
 
-/* Grid Layout */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 30px;
 }
 
-/* Card */
 .product-card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 18px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  transition: 0.3s ease;
+  background: var(--bg-card);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: var(--shadow-soft);
   display: flex;
   flex-direction: column;
-  height: 100%;
+  transition: 0.3s ease;
 }
 
 .product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 35px rgba(0,0,0,0.08);
+  transform: translateY(-5px);
 }
 
-/* Image wrapper */
 .product-image {
-  background: #f5f1ec;
-  border-radius: 14px;
-  overflow: hidden;
+  background: #F8F3EE;
+  border-radius: 16px;
   height: 220px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
-/* Image itself */
 .product-image img {
   max-width: 90%;
   max-height: 90%;
   object-fit: contain;
 }
 
-/* Product Info */
 .product-info h3 {
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 18px;
   margin-bottom: 6px;
 }
 
 .price {
-  font-size: 15px;
   font-weight: 600;
   margin-bottom: 16px;
 }
 
-/* Buttons Row */
 .product-actions {
   margin-top: auto;
   display: flex;
@@ -92,11 +57,9 @@ body {
   align-items: center;
 }
 
-/* View link */
 .view-link {
   text-decoration: none;
-  color: #8a6d5c;
-  font-weight: 500;
+  color: var(--olive);
   font-size: 14px;
 }
 
@@ -104,19 +67,16 @@ body {
   text-decoration: underline;
 }
 
-/* Add to Cart Button */
 .product-actions button {
-  background: #d88c63;
-  color: white;
+  background: var(--accent);
   border: none;
-  padding: 8px 16px;
-  font-size: 13px;
-  border-radius: 20px;
+  padding: 8px 18px;
+  border-radius: 25px;
+  color: white;
   cursor: pointer;
   transition: 0.3s ease;
 }
 
 .product-actions button:hover {
-  background: #c7794e;
-  transform: translateY(-2px);
+  background: var(--accent-dark);
 }
