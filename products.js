@@ -3,7 +3,7 @@ const products = [
     id: "octopus",
     name: "Octopus Keychain",
     category: "keychains",
-    price: 580,
+    price: 200,
     image: "Octopus_PP.jpg",
     description: "An adorable hand-crocheted octopus keychain made with soft premium yarn. Lightweight, durable, and perfect to add a cute handmade touch to your keys or bags."
   },
@@ -76,7 +76,7 @@ const products = [
   name: "Turtle Keychain",
   category: "keychains",
   price: 350,
-  image: "Turtle_PP.png",
+  image: "Turtle_PP.PNG",
   description: "Meet your tiny handcrafted companion — our Crochet Turtle Keychain, carefully handmade stitch by stitch with premium yarn. Featuring a vibrant shell, soft textured body, and charming bead eyes, this little turtle adds a playful yet elegant touch to your keys, bags, or gifting moments. Lightweight, durable, and irresistibly cute, it’s perfect for crochet lovers and anyone who appreciates handmade artistry in everyday accessories."
 }
 ];
