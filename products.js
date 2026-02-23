@@ -72,11 +72,11 @@ const products = [
     description: "An adorable crochet broccoli keychain, handmade stitch by stitch with love. Quirky, lightweight, and fun — perfect for food lovers who enjoy a little humor in their everyday accessories."
   },
   {
-    id: "turtle",
-    name: "Turtle Keychain",
-    category: "keychains",
-    price: 350,
-    image: "Turtle_PP.png",
-    description: "An adorable crochet turtle keychain, handmade stitch by stitch with love. Quirky, lightweight, and fun — perfect for food lovers who enjoy a little humor in their everyday accessories."
-  }
+  id: "turtle",
+  name: "Turtle Keychain",
+  category: "keychains",
+  price: 350,
+  image: "Turtle_PP.PNG",
+  description: "Meet your tiny handcrafted companion — our Crochet Turtle Keychain, carefully handmade stitch by stitch with premium yarn. Featuring a vibrant shell, soft textured body, and charming bead eyes, this little turtle adds a playful yet elegant touch to your keys, bags, or gifting moments. Lightweight, durable, and irresistibly cute, it’s perfect for crochet lovers and anyone who appreciates handmade artistry in everyday accessories."
+}
 ];
