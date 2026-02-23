@@ -70,5 +70,13 @@ const products = [
     price: 150,
     image: "Brocoli_PP.jpg",
     description: "An adorable crochet broccoli keychain, handmade stitch by stitch with love. Quirky, lightweight, and fun — perfect for food lovers who enjoy a little humor in their everyday accessories."
+  },
+  {
+    id: "turtle",
+    name: "Turtle Keychain",
+    category: "keychains",
+    price: 350,
+    image: "Turtle_PP.png",
+    description: "An adorable crochet turtle keychain, handmade stitch by stitch with love. Quirky, lightweight, and fun — perfect for food lovers who enjoy a little humor in their everyday accessories."
   }
 ];
