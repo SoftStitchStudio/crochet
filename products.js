@@ -76,7 +76,7 @@ const products = [
   name: "Turtle Keychain",
   category: "keychains",
   price: 350,
-  image: "Turtle_PP.PNG",
+  image: "Turtle_PP.png",
   description: "Meet your tiny handcrafted companion — our Crochet Turtle Keychain, carefully handmade stitch by stitch with premium yarn. Featuring a vibrant shell, soft textured body, and charming bead eyes, this little turtle adds a playful yet elegant touch to your keys, bags, or gifting moments. Lightweight, durable, and irresistibly cute, it’s perfect for crochet lovers and anyone who appreciates handmade artistry in everyday accessories."
 }
 ];
