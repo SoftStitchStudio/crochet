@@ -109,7 +109,7 @@ const products = [
   name: "Baby Blanket",
   category: "baby-sets",
   price: 1749,
-  image: "Baby_Blanket_PP4.png",
+  image: "Baby_Blanket_PP4.PNG",
   description: "Wrap your little one in warmth, softness, and playful charm with our Handmade Crochet Animal Baby Blanket. Thoughtfully crafted with love, this blanket features 25 beautifully crocheted squares, each showcasing an adorable 3D animal design that brings joy and imagination to your baby's nursery. From lions and elephants to turtles and ladybugs, every square tells a tiny story — making this blanket both a comfort piece and a delightful visual experience for babies. Perfect for newborn cuddles, stroller walks, nursery decor, or memorable baby gifts, this blanket blends craftsmanship with timeless nursery aesthetics."
 }
 ];
